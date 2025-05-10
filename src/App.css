@@ -1,38 +1,792 @@
-.App {
+.navbar-color{
+  background-color: #000;
+}
+/************CONTAINER PRINCIPAL IMAGEN************/
+.container-img-bar{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 40rem;
+  margin-top: 0;
+  background-color: #eaeaea;
+}
+.container-img-bar .logo {
+  width: 20%;
+  height: auto; /* La altura se ajustará proporcionalmente al ancho */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.container-img-bar .logo img {
+  display: block; /* Elimina el espacio extra debajo de la imagen */
+  max-width: 100%; /* La imagen no será más ancha que su contenedor (.logo) */
+  height: auto; /* La altura se ajustará para mantener la proporción */
+}
+/******************INICIO ADMIN*********************/
+/* From Uiverse.io by Yaya12085 */ 
+.container-card-ini {
+  position: fixed; /* Se fija a la ventana del navegador */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo negro semitransparente (grisáceo) */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  z-index: 1001; /* Un valor alto para que esté por encima de otros elementos */
+  overflow: auto; /* Permite el scroll si el contenido es demasiado grande para la pantalla */
+}
+
+.form-inicio {
+  width: calc(100% - 20px); /* Ocupa el ancho completo menos el margen */
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 90%; /* Ocupa el 90% del ancho en pantallas pequeñas */
+  max-width: 300px; /* Máximo ancho para pantallas más grandes */
+  position: relative; /* Para posicionar el botón de cerrar */
+  margin: 20px; /* Añade un margen alrededor del formulario */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.form-inicio button{
+  background-color: none;
+}/* ... otros estilos ... */
+.modal-close-button {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #555;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10; /* Asegura que el botón de cerrar esté por encima del contenido del formulario */
+}
+.modal-close-button:hover {
+  color: #aa1212; /* Cambia el color del texto al azul al pasar el mouse */
+   cursor: pointer; /* Asegurarse de que el cursor indique que es interactivo */
+}
+.form-inicio  .form-title {
+  font-size: 1.25rem;
+  margin-top: 2%;
+  line-height: 1.75rem;
+  font-weight: 600;
   text-align: center;
+  color: #000;
+  margin-bottom: 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input-container {
+  position: relative;
+  display: flex;;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.input-container input {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.input-container span {
+  display: grid;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  place-content: center;
+}
+
+.input-container span svg {
+  color: #9CA3AF;
+  width: 1rem;
+  height: 1rem;
+}
+
+.submit {
+  display: block;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background-color: #3640a0;
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  width: 50%;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  border: none; /* Añade esto para evitar bordes innecesarios */
+  cursor: pointer; /* Indica que es interactivo */
+}
+.submit:hover{
+  background-color: #4a54b1;
+}
+/* Media query para pantallas más grandes (ejemplo: tablets en adelante) */
+
+@media (min-width: 768px) {
+  .form-inicio {
+    padding: 15px;
+  }
+
+  .form-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .input-container input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .submit {
+    font-size: 0.8rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/**************CARD DEL PRODUCTO*******************/
+
+
+/* From Uiverse.io by Sashank02 */ 
+.container-card {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: wrap; /* Permite que las cards pasen a la siguiente línea si no hay suficiente espacio */
+  justify-content:space-evenly; /* Centra las cards horizontalmente */
+  padding: 20px;
+}
+
+.container-card .card {
+  padding: 20px;
+  margin-top: 2%;
+  width: calc(100% - 20px); /* Ocupa el ancho completo menos el margen */
+  max-width: 300px;
+  min-height: 320px;
+  border-radius: 20px;
+  background: #201f1f;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  translate: 0 -10px;
+}
+
+.card-title {
+  font-size: 2em;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0.83em 0 0 0.83em;
+}
+.card-precio{
+  color: white;
+  font-weight: 500;
+  font-size: 1.8em;
+  margin: 0.83em 0 0 0.83em;
+}
+.card-image {
+  min-height: 10em;
+  background-color: #3f1b1b;
+  border-radius: 0.9375em;
+  background: #313131;
+  box-shadow: inset 0.3125em 0.3125em 0.1875em #2f2f2f,
+              inset -0.3125em -0.3125em 0.1875em #333333;
+  margin-top: 0.625em;
+}
+
+.card-body {
+  margin: 0.8125em 0 0 0.83em;
+  color: rgb(184, 184, 184);
+  font-size: 0.9375em;
+}
+
+.footer {
+  float: right;
+  margin: 1.75em 0 0 1.125em;
+  font-size: 0.8125em;
+  color: #b3b3b3;
+}
+
+
+
+/* Media query para pantallas más grandes (ejemplo: tablets en adelante) */
+@media (min-width: 768px) {
+  .container-card {
+    justify-content:space-around; /* Alinea las cards a la izquierda en pantallas grandes */
+  }
+
+  .container-card .card {
+    width: calc(50% - 20px); /* Dos cards por fila */
+    max-width: none; /* Elimina la restricción de ancho máximo */
+  }
+}
+
+/* Media query para pantallas aún más grandes (ejemplo: desktops) */
+@media (min-width: 1024px) {
+  .container-card .card {
+    width: calc(33.33% - 20px); /* Tres cards por fila */
+  }
+}
+
+
+/**********BOTON**************/
+/* From Uiverse.io by thewizardofzen */ 
+.container-b{
+  display: flex;
+  justify-content: left;
+  width: 50%;
+  margin-left: 5%;
+}
+.container-b button {
+  --primary-color: #ffff;
+  --secondary-color: #1c0301;
+  --hover-color: #eceff2;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 50px;
+  color: var(--secondary-color);
+  padding: .5em 1.3em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s ;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.container-b button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-b button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.container-b button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.container-b button:hover {
+  background-color: var(--hover-color);
+}
+
+.container-b button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.container-b button:hover .arrow:before {
+  right: 0;
+}
+
+.by-name {
+  font-weight: 700;
+}
+/*************TICKETS E INFORMACION*******************/
+.card-tickets {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  background-color: rgb(255, 255, 255);
+  /*box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 17px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;*/
+  width: 50%;
+  padding: 2%;
+  border-radius: 8px;
+  /*border: 1px solid rgba(218, 213, 213, 0.397);*/
+}
+.card-tickets h3{
+  color: rgb(13, 73, 22);
+  font-weight: 700;
+  margin-bottom: 2%;
+}
+.card-tickets .card-img{
+  width: 100%;
+  padding: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: #2f2f2f;
+  border-radius: 10px;
+  min-height: 10em;
+}
+.card-tickets .tickets{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* Permite que las cards pasen a la siguiente línea si no hay suficiente espacio */
+  justify-content:space-between; /* Centra las cards horizontalmente */
+  
+}
+.card-tickets .tickets .cuadros{
+  background-color: rgb(255, 255, 255);
+  width: 20%;
+  min-height: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border-radius: 10px;
+  padding: 2%;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.cuadros h3{
+  color: rgb(17, 17, 77);
+}
+.cuadros p{
+  color: #b3b3b3;
+}
+/****************************************/
+.cantidad-input {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #f3f3f3; /* Borde alrededor del componente */
+  border-radius: 8px;
+  overflow: hidden; /* Para que el borde redondeado funcione con los botones */
+  margin-bottom: 3%;
+}
+
+.cantidad-button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  padding: 10px 35px;
+  cursor: pointer;
+  user-select: none; /* Evita la selección de texto al hacer clic */
+  outline: none; /* Elimina el contorno al enfocar */
+}
+
+.cantidad-button.decrement {
+  color: #666;
+  border-radius: 10px;
+  background-color: #e0dede;
+}
+.decrement:hover{
+  background-color: #b9b6b6;
+}
+.cantidad-button.increment {
   color: white;
+  border-radius: 10px;
+  background-color: #1a202c; /* Color oscuro como en la imagen */
+}
+.increment:hover {
+  background-color: #2c3548; /* Color oscuro como en la imagen */
 }
 
-.App-link {
-  color: #61dafb;
+.cantidad-field {
+  width: 40px; /* Ajusta el ancho según sea necesario */
+  text-align: center;
+  border: none;
+  padding: 8px;
+  font-size: 1em;
+  outline: none;
+  -moz-appearance: textfield; /* Ocultar flechas en Firefox */
+}
+@media (max-width: 768px) {
+  .card-tickets .tickets .cuadros{
+    width: 40%;
+    padding: 2%;
+  }
+}
+/* Ocultar flechas en Chrome, Safari, Edge */
+.cantidad-field::-webkit-outer-spin-button,
+.cantidad-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*********************/
+/***************FORMULARIO******************/
+.card-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  background-color: rgb(255, 255, 255);
+  /*box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 7px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  */width: 50%;
+  padding: 2%;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+  /*border: 1px solid rgba(218, 213, 213, 0.397);*/
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card-form .form {
+  display: grid; /* El formulario es un contenedor grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Crea columnas que se ajustan al espacio disponible */
+  gap: 10px; /* Espacio entre las celdas de la grid (los inputs) */
+  width: 100%;
+}
+.card-form .form .select,
+.card-form .form .file-upload-container {
+  grid-column: 1 / -1; /* Ocupan toda la fila */
+  margin-bottom: 10px;
+}
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  color: #969696;
+  font-weight: 600;
+  grid-column: 1 / -1; /* Ocupa toda la línea */
+}
+
+.select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(206, 206, 206, 0.397);
+  border-radius: 8px;
+  box-sizing: border-box;
+  grid-column: 1 / -1; /* Ocupa toda la línea */
+}
+.select:valid {
+  /* Estilos cuando una opción válida (no la inicial vacía) está seleccionada */
+  color: #333; /* Cambia el color del texto cuando se selecciona una opción */
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(179, 181, 182, 0.3); /* Añade una sombra suave */
+  background-color: #e9ecef; /* Cambia el color de fondo */
+}
+.detalles-pago {
+  margin-top: 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  grid-column: 1 / -1;
+  opacity: 0; /* Inicialmente oculto */
+  transform: scale(0.8); /* Inicialmente un poco más pequeño */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Transición suave para opacidad y escala */
+  transform-origin: top left; /* Define el punto de origen de la escala */
+}
+
+.detalles-pago.visible {
+  opacity: 1; /* Visible al agregar la clase */
+  transform: scale(1); /* Escala normal */
+}
+.detalles-titulo {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.detalles-pago p {
+  margin: 5px 0;
+}
+
+
+.cont-boton-compra{
+  display: flex;
+  grid-column: 1 / -1; 
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.card-form .form .select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.card-form .form .file-upload-container {
+  display: flex;
+  flex-direction: column; /* Para apilar el botón y el mensaje */
+}
+
+.card-form .form .file-input {
+  padding: 10px;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 8px;
+  box-sizing: border-box;
+  opacity: 0; /* Hacer el input invisible para usar la etiqueta como botón */
+  position: absolute;
+  cursor: pointer;
+}
+
+.card-form .form .file-label {
+  width: 33%;
+  padding: 10px;
+  border: 1px solid #d3d5e4f5;
+  border-radius: 15px;
+  box-sizing: border-box;
+  background-color: #dddbdb;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(85, 85, 85);
+  cursor: pointer;
+}
+.card-form .form .button-comprar {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 25px;
+  box-sizing: border-box;
+  background-color: #196231f5;
+  text-align: center;
+  cursor: pointer;
+  color: rgb(243, 241, 241);
+  cursor: pointer;
+}
+
+.card-form .form .button-comprar:hover {
+  background-color: #1f622b;
+}
+.input:hover,
+.select:hover,
+.card-form .form .file-label:hover { /* Aplicamos hover también a la etiqueta del botón de archivo */
+  border-color: #c2c8bf; /* Cambia el color del borde al pasar el cursor */
+  box-shadow: 0 0 5px rgba(143, 158, 137, 0.5); /* Añade una sombra suave */
+}
+
+.card-form .form .file-input:hover + .card-form .form .file-label {
+  border-color: #d4eaca; /* Cambia el color del borde al pasar el cursor */
+  box-shadow: 0 0 5px rgba(172, 204, 162, 0.5); /* Añade una sombra suave */
+
+}
+
+.card-form .form .file-message {
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #777;
+  text-align: left;
+}
+
+.card-form .form input[type="text"] {
+  padding: 10px;
+  box-sizing: border-box;
+}
+.form-title{
+  font-size: 1.3rem;
+  padding-top: 2%;
+  color: #1a4e25;
+  font-weight: 600;
+}
+/* Media query para pantallas más pequeñas (opcional, Grid ya es bastante flexible) */
+@media (max-width: 768px) {
+  .card-form {
+    width: 80%;
+    padding: 3%;
   }
-  to {
-    transform: rotate(360deg);
+  .card-form .form .file-label{
+    width: 50%;
+  }
+  .card-tickets{
+    width: 80%;
+    padding: 4%;
   }
 }
+.card-form .form .select { /* Estilos para el select */
+  width: 100%; /* Ocupa todo el ancho de su celda del grid */
+  padding: 10px;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 8px;
+  box-sizing: border-box;
+  grid-column: 1 / -1; /* Se extiende desde la primera hasta la última columna del grid */
+  margin-bottom: 10px; /* Espacio entre el select y los siguientes inputs */
+  background-color: #ffffff;
+}
+.input {
+  width: 100%;
+  padding:10px;
+  outline: 0;
+  background-color: #ffffff;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 8px;
+}
+/***************************************/
+/************ ADMIN *********************/
+/*****************************************/
+/* From Uiverse.io by Sashank02 */ 
+.container-card-table {
+  display: flex;
+  margin-top: 5%;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  
+}
+.container-card-table h2{
+  font-weight: 700;
+  margin-bottom: 3%;
+}
+.container-card-table button{
+  padding: 10%;
+  color: #316b31;
+  font-weight: 600;
+  border: none;
+  font-size: 10px;
+  border-radius: 50px;
+  background-color: rgb(177, 223, 202);
+}
+.container-card-table button:hover{
+  padding: 10%;
+  color: #dfe9e1;
+  background-color: rgb(94, 166, 134);
+}
+.container-card-table .table-form {
+  width: 80%;
+  margin-bottom: 0; /* Ya tiene margen el contenedor */
+  color: #333; /* Color de texto principal */
+  border-collapse: collapse; /* Evita bordes dobles */
+  background-color: #fff; /* Fondo blanco */
+  display: block; /* Necesario para el overflow en la tabla */
+  overflow-x: auto; /* Agrega el scroll horizontal */
+  overflow-x: auto; /* Para el scroll horizontal si es necesario */
+  max-height: 500px; /* Define una altura máxima para el contenedor */
+  overflow-y: auto; /* Agrega el scroll vertical cuando el contenido excede max-height */
+
+  -webkit-overflow-scrolling: touch; /* Para desplazamiento suave en iOS */
+  border-radius: 20px;
+  border-color: #c4c4c4;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+ .thead-c{
+  background-color: #42c159; /* Color morado del encabezado (similar) */
+  color: #fff;
+}
+
+.container-card-table .table-form th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.container-card-table .table-form td {
+  padding: 10px 15px;
+  font-size: 0.85rem;
+}
+
+.container-card-table .table-form tbody tr:nth-child(even) {
+  background-color: #f6f6f6; /* Fondo grisáceo para filas pares */
+}
+
+.container-card-table tbody tr:hover {
+  background-color: #e9ecef; /* Gris claro al pasar el ratón */
+}
+
+/* Estilo para la primera columna (similar al '#') */
+.container-card-table .table-form th:first-child,
+.table td:first-child {
+  width: 30%; /* Ancho pequeño para la primera columna */
+  text-align: center;
+}
+/* Media query para pantallas de laptop y superiores */
+@media (min-width: 992px) {
+  .container-card-table {
+    display: block;
+    padding: 0;
+  }
+
+  /* Define anchos para las columnas en pantallas más grandes (opcional) */
+  .container-card-table .table-form th:nth-child(1),
+  .container-card-table .table-form td:nth-child(1) {
+    width: 17%; /* Ejemplo de ancho */
+  }
+
+  .container-card-table .table-form th:nth-child(2),
+  .container-card-table .table-form td:nth-child(2) {
+    width: 18%; /* Ejemplo de ancho */
+  }
+
+  .container-card-table .table-form th:nth-child(3),
+  .container-card-table .table-form td:nth-child(3) {
+    width: 15%; /* Ejemplo de ancho */
+  }
+  .container-card-table .table-form th:nth-child(5),
+  .container-card-table .table-form td:nth-child(5) {
+    width: 15%; /* Ejemplo de ancho */
+  }
+  .container-card-table .table-form th:nth-child(6),
+  .container-card-table .table-form td:nth-child(6) {
+    width: 14%; /* Ejemplo de ancho */
+  }
+  .container-card-table .table-form th:nth-child(8),
+  .container-card-table .table-form td:nth-child(8) {
+    width: 12%; /* Ejemplo de ancho */
+  }
+  /* ... Define anchos para el resto de las columnas ... */
+}
+
+
+
+
+/***********FOOTER**************/
+.minimal-footer {
+  background-color: #1d1d1d; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  padding: 20px 0;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.minimal-footer .container {
+  display: flex;
+  justify-content: center; /* Espacio entre el nombre y los iconos */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 0 20px; /* Añade un poco de padding horizontal */
+}
+.minimal-footer .copyright-text {
+  margin: 0;
+}
+.minimal-footer .social-icons {
+  padding-left: 0;
+  list-style: none;
+  display: flex; /* Alinea los iconos horizontalmente */
+  margin: 0;
+}
+
+.minimal-footer .social-icons li {
+  margin-left: 15px; /* Espacio entre los iconos */
+}
+
+.minimal-footer .social-icons li:first-child {
+  margin-left: 0; /* Sin margen en el primer icono */
+}
+
+.minimal-footer .social-icons a {
+  color: #fff;
+  font-size: 20px; /* Tamaño de los iconos */
+  text-decoration: none; /* Opcional: quitar subrayado de los enlaces */
+}
+
+.minimal-footer .social-icons a:hover {
+  color: #b2eccf; /* Cambia de color al pasar el ratón (opcional) */
+}
+
